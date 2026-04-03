@@ -1,12 +1,11 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import Record from '@/components/Record'
+import Trainer from '@/components/Trainer'
+import Booking from '@/components/Booking'
 import NextFight from '@/components/NextFight'
 import Highlights from '@/components/Highlights'
-import Shop from '@/components/Shop'
 import About from '@/components/About'
 import Gallery from '@/components/Gallery'
-import Sponsors from '@/components/Sponsors'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -16,13 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Record />
+        <Trainer />
+        <Booking />
         <NextFight />
         <Highlights />
-        <Shop />
         <About />
         <Gallery />
-        <Sponsors />
         <Contact />
       </main>
       <Footer />

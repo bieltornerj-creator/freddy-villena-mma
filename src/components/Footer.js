@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   const socialLinks = [
-    { name: 'Instagram', url: 'https://instagram.com', icon: '📱' },
-    { name: 'YouTube', url: 'https://youtube.com', icon: '🎥' },
-    { name: 'TikTok', url: 'https://tiktok.com', icon: '✨' },
-    { name: 'Twitter', url: 'https://twitter.com', icon: '𝕏' },
+    { name: 'Instagram', url: 'https://www.instagram.com/Freddy_ice_boy', icon: '📷' },
+    { name: 'TikTok', url: 'https://www.tiktok.com/@Freddy.villena85', icon: '🎵' },
+    { name: 'WhatsApp', url: 'https://wa.me/34671478050', icon: '💬' },
+    { name: 'Email', url: 'mailto:management@freddyvillena.com', icon: '📧' },
   ]
 
   return (
@@ -22,7 +22,9 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-2xl font-bold text-ice mb-2">ICE BOY</h3>
-            <p className="text-gray-400">Freddy Villena - El Cazador de Sueños</p>
+            <p className="text-gray-400">Freddy Villena</p>
+            <p className="text-sm text-gray-500">Luchador Amateur MMA | Entrenador Profesional</p>
+            <p className="text-sm text-gray-500">Record: 15-6 | Racha: 6 Victorias</p>
           </motion.div>
 
           {/* Quick Links */}
@@ -35,23 +37,23 @@ export default function Footer() {
             <h4 className="text-ice font-bold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#record" className="hover:text-ice transition-colors">
-                  Récord
+                <a href="#entrenador" className="hover:text-ice transition-colors">
+                  Entrenamientos
+                </a>
+              </li>
+              <li>
+                <a href="#reservas" className="hover:text-ice transition-colors">
+                  Reservar Clase
                 </a>
               </li>
               <li>
                 <a href="#next-fight" className="hover:text-ice transition-colors">
-                  Próximo Combate
+                  Próxima Pelea
                 </a>
               </li>
               <li>
                 <a href="#about" className="hover:text-ice transition-colors">
-                  Sobre Mí
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-ice transition-colors">
-                  Contacto
+                  Sobre Freddy
                 </a>
               </li>
             </ul>

@@ -7,10 +7,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const links = [
-    { name: 'Récord', href: '#record' },
-    { name: 'Próximo Combate', href: '#next-fight' },
+    { name: 'Entrenador', href: '#entrenador' },
+    { name: 'Reservas', href: '#reservas' },
+    { name: 'Próxima Pelea', href: '#next-fight' },
     { name: 'Highlights', href: '#highlights' },
-    { name: 'Tienda', href: '#shop' },
     { name: 'Sobre Mí', href: '#about' },
     { name: 'Galería', href: '#gallery' },
     { name: 'Contacto', href: '#contact' },

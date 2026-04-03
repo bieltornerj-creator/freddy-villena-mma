@@ -13,7 +13,7 @@ export default function NextFight() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const targetDate = new Date('2024-06-15T20:00:00').getTime()
+      const targetDate = new Date('2026-04-18T10:00:00').getTime()
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -81,23 +81,26 @@ export default function NextFight() {
             transition={{ duration: 0.8 }}
           >
             <div className="border-l-4 border-ice pl-6">
-              <h3 className="text-2xl font-bold text-light mb-2">Rival</h3>
-              <p className="text-xl text-ice">Islam Makhachev</p>
+              <h3 className="text-2xl font-bold text-light mb-2">Fecha</h3>
+              <p className="text-xl text-ice">18 de Abril de 2026</p>
+              <p className="text-sm text-gray-400">10:00 am - 17:00 pm</p>
             </div>
 
             <div className="border-l-4 border-ice pl-6">
               <h3 className="text-2xl font-bold text-light mb-2">Evento</h3>
-              <p className="text-xl text-ice">UFC 297 - Madison Square Garden</p>
+              <p className="text-xl text-ice">Campeonato de Cataluña 2026</p>
             </div>
 
             <div className="border-l-4 border-ice pl-6">
               <h3 className="text-2xl font-bold text-light mb-2">Ubicación</h3>
-              <p className="text-xl text-ice">Nueva York, Estados Unidos</p>
+              <p className="text-xl text-ice">Pabellón Olímpico La Mina</p>
+              <p className="text-sm text-gray-400">Carrer d'Aristides Maillol, 1</p>
+              <p className="text-sm text-gray-400">08930 Sant Adrià de Besòs, Barcelona</p>
             </div>
 
             <div className="border-l-4 border-ice pl-6">
-              <h3 className="text-2xl font-bold text-light mb-2">Categoría</h3>
-              <p className="text-xl text-ice">Peso Ligero (155 lbs)</p>
+              <h3 className="text-2xl font-bold text-light mb-2">Racha</h3>
+              <p className="text-xl text-ice">6 Victorias Seguidas 🔥</p>
             </div>
           </motion.div>
         </div>

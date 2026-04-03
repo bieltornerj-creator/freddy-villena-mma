@@ -6,23 +6,13 @@ export default function Highlights() {
   const videos = [
     {
       id: 1,
-      title: 'KO en Primera Ronda',
-      embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      title: 'AFL 37 - Vs Juan Carlos Postigo',
+      embed: 'https://www.youtube.com/embed/1MWijGtpM1k',
     },
     {
       id: 2,
-      title: 'Sumisión Épica',
-      embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    },
-    {
-      id: 3,
-      title: 'Mejores Momentos 2024',
-      embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    },
-    {
-      id: 4,
-      title: 'Entrenamiento en Gimnasio',
-      embed: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      title: 'WOW 28 - Vs David Santana',
+      embed: 'https://www.youtube.com/embed/vVTl4JTu1AE',
     },
   ]
 
@@ -39,7 +29,7 @@ export default function Highlights() {
           <div className="w-20 h-1 bg-ice mx-auto mb-12" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {videos.map((video, idx) => (
             <motion.div
               key={video.id}

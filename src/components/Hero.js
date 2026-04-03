@@ -10,8 +10,8 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=1200&q=80)',
-          filter: 'brightness(0.3)',
+          backgroundImage: 'url(https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa8c31ee04b3700c451d.jpeg)',
+          filter: 'brightness(0.35)',
         }}
       />
 
@@ -55,10 +55,10 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <Link
-            href="#shop"
+            href="#reservas"
             className="inline-block px-8 py-4 bg-ice text-dark font-bold text-lg rounded-lg hover:bg-cyan-400 transition-colors hover:shadow-lg hover:shadow-ice/50"
           >
-            Ir a Tienda
+            Reservar Clase
           </Link>
         </motion.div>
       </motion.div>

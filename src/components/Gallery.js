@@ -6,33 +6,43 @@ export default function Gallery() {
   const images = [
     {
       id: 1,
-      url: 'https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=400&q=80',
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa8c31ee04b3700c451d.jpeg',
       alt: 'Freddy en el octágono',
     },
     {
       id: 2,
-      url: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=400&q=80',
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa734cde4bbc2a75d818.jpeg',
       alt: 'Combate épico',
     },
     {
       id: 3,
-      url: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80',
-      alt: 'Entrenamiento',
-    },
-    {
-      id: 4,
-      url: 'https://images.unsplash.com/photo-1579356793868-4fa1dd16be47?w=400&q=80',
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73799acb29acdae1a7.jpeg',
       alt: 'Freddy en acción',
     },
     {
+      id: 4,
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73799acb29acdae193.jpeg',
+      alt: 'Preparación',
+    },
+    {
       id: 5,
-      url: 'https://images.unsplash.com/photo-1586380951529-faffedc8f84b?w=400&q=80',
-      alt: 'Celebración victoria',
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73fcf3f9acd761dc08.jpeg',
+      alt: 'Entrenamiento',
     },
     {
       id: 6,
-      url: 'https://images.unsplash.com/photo-1518611505868-d7b6b9c50ee8?w=400&q=80',
-      alt: 'Preparación',
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa7331ee04b3700c4298.jpeg',
+      alt: 'ICE BOY',
+    },
+    {
+      id: 7,
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73c905d18811afca18.jpeg',
+      alt: 'Lucha',
+    },
+    {
+      id: 8,
+      url: 'https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73a7dcb4cff054f48c.jpeg',
+      alt: 'Combate',
     },
   ]
 

@@ -4,8 +4,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Freddy Villena - ICE BOY | Luchador MMA Profesional',
-  description: 'Freddy Villena, apodado ICE BOY, es un luchador profesional de MMA. El cazador de sueños.',
+  title: 'Freddy Villena ICE BOY | Luchador Amateur de MMA y Entrenador',
+  description: 'Freddy Villena (ICE BOY) - Luchador amateur de MMA con récord 15-6. Entrenador profesional en BCN TEAM BARCELONA. Reserva tu clase hoy.',
 }
 
 export default function RootLayout({ children }) {

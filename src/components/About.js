@@ -4,10 +4,12 @@ import { motion } from 'framer-motion'
 
 export default function About() {
   const stats = [
-    { label: 'Edad', value: '28' },
-    { label: 'Peso', value: '77 kg' },
-    { label: 'Altura', value: '1.78 m' },
-    { label: 'Estilo', value: 'Striking' },
+    { label: 'Edad', value: '22' },
+    { label: 'Peso', value: '68-70 kg' },
+    { label: 'Altura', value: '1.71 m' },
+    { label: 'Record', value: '15-6' },
+    { label: 'Racha', value: '6 Victorias' },
+    { label: 'Gimnasio', value: 'BCN TEAM' },
   ]
 
   return (
@@ -34,7 +36,7 @@ export default function About() {
           >
             <div className="aspect-square bg-gradient-to-br from-ice to-cyan-600 rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&q=80"
+                src="https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73799acb29acdae1a7.jpeg"
                 alt="Freddy Villena"
                 className="w-full h-full object-cover"
               />
@@ -51,20 +53,20 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg text-light leading-relaxed">
-              Freddy Villena, conocido mundialmente como <span className="text-ice font-bold">ICE BOY</span>, es un
-              luchador profesional de MMA con una pasión incomparable por el deporte. Con más de 10 años de experiencia
-              en competiciones internacionales, ha demostrado ser un atleta versátil y determined.
+              Freddy Villena, conocido como <span className="text-ice font-bold">ICE BOY</span>, es un luchador amateur de MMA
+              y entrenador profesional con una pasión incomparable por el deporte. Con un récord de <span className="text-ice font-bold">15-6</span> y
+              actualmente en una racha de <span className="text-ice font-bold">6 victorias seguidas</span>.
             </p>
 
             <p className="text-lg text-light leading-relaxed">
               Su apodo "ICE BOY" viene de su capacidad para mantener la calma bajo presión en el octágono, combinado con
-              su ofensiva letal y técnica impecable. Es el cazador de sueños, persiguiendo constantemente la excelencia
-              y el campeonato.
+              su ofensiva versátil y técnica impecable. Es el cazador de sueños, persiguiendo constantemente la excelencia
+              y el campeonato en la categoría amateur.
             </p>
 
             <p className="text-lg text-light leading-relaxed">
-              Entrena en <span className="text-ice font-bold">Barcelona Fighters Gym</span>, donde perfecciona su arte
-              día a día junto a un equipo de élite.
+              Entrena en <span className="text-ice font-bold">BCN TEAM BARCELONA</span>, en Rubí/Barcelona, donde perfecciona su arte
+              día a día junto a un equipo de élite. También ofrece entrenamiento profesional a otros atletas.
             </p>
 
             {/* Stats */}
