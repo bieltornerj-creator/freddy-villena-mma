@@ -47,8 +47,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#next-fight" className="hover:text-ice transition-colors">
-                  Próxima Pelea
+                <a href="#tienda" className="hover:text-ice transition-colors">
+                  Tienda Oficial
                 </a>
               </li>
               <li>

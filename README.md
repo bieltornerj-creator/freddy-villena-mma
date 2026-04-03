@@ -1,24 +1,27 @@
 # Freddy Villena - ICE BOY | Sitio Web Profesional de MMA
 
-Web one-page profesional para Freddy Villena, luchador de MMA apodado "ICE BOY".
+Web one-page profesional para Freddy Villena, luchador amateur de MMA apodado "ICE BOY", con entrenador y tienda oficial.
 
 ## 🚀 Características
 
 - **Diseño Oscuro y Premium**: Colores negro, blanco y azul hielo (#00d4ff)
 - **Responsive Mobile-First**: Optimizado para todos los dispositivos
 - **Animaciones Suaves**: Con Framer Motion
+- **Base de Datos Supabase**: Gestión de reservas
+- **Tienda Oficial**: Camiseta FREDDY ICE BOY
+- **Sistema de Reservas**: Integrado con base de datos
 - **Scroll Suave**: Navegación fluida
 - **Navbar Fija**: Con efecto backdrop blur
-- **10 Secciones**:
+- **Secciones principales**:
   1. **HERO** - Presentación con CTA
-  2. **RECORD** - Tabla de peleas profesionales
-  3. **PRÓXIMO COMBATE** - Countdown animado
-  4. **HIGHLIGHTS** - Grid de videos YouTube
-  5. **TIENDA** - Cards de productos
-  6. **SOBRE FREDDY** - Bio y estadísticas
-  7. **GALERÍA** - Grid de fotos 3 columnas
-  8. **SPONSORS** - Logos de patrocinadores
-  9. **CONTACTO** - Formulario de contacto
+  2. **ENTRENADOR** - Servicios de clases
+  3. **RESERVAS** - Formulario + Supabase
+  4. **PRÓXIMA PELEA** - Countdown animado
+  5. **HIGHLIGHTS** - Videos de peleas
+  6. **TIENDA** - Camiseta oficial FREDDY ICE BOY
+  7. **SOBRE FREDDY** - Bio y estadísticas
+  8. **GALERÍA** - Fotos 3 columnas
+  9. **CONTACTO** - Email, teléfono, redes sociales
   10. **FOOTER** - Links sociales
 
 ## 🛠️ Stack Tecnológico
@@ -32,19 +35,50 @@ Web one-page profesional para Freddy Villena, luchador de MMA apodado "ICE BOY".
 
 - Node.js 16+
 - npm o yarn
+- Cuenta Supabase (ya configurada)
 
 ## 🚀 Instalación y Uso
 
+### 1. Instalar dependencias
 ```bash
-# Instalar dependencias
 npm install
-
-# Desarrollo
-npm run dev
-
-# Acceder a
-# http://localhost:3000
 ```
+
+### 2. Configurar Supabase (IMPORTANTE)
+
+Ve a tu proyecto Supabase: https://app.supabase.com
+
+En el editor SQL, copia y ejecuta el contenido de `SQL_SUPABASE.sql`:
+
+```sql
+-- Crear tabla de reservas
+CREATE TABLE IF NOT EXISTS reservas (
+  id BIGSERIAL PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  telefono VARCHAR(20) NOT NULL,
+  edad INTEGER NOT NULL,
+  arte_marcial VARCHAR(50) NOT NULL,
+  fecha DATE NOT NULL,
+  hora TIME NOT NULL,
+  estado VARCHAR(20) DEFAULT 'pendiente',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+```
+
+### 3. Iniciar desarrollo
+```bash
+npm run dev
+```
+
+Accede a: **http://localhost:3000**
+
+### 4. Probar la reserva
+- Ve a "Reservas"
+- Llena el formulario (nombre, email, teléfono, **edad**, **arte marcial**, fecha, hora)
+- Haz clic en "Reservar Clase"
+- Los datos se guardarán automáticamente en Supabase
 
 ## 📦 Build para Producción
 

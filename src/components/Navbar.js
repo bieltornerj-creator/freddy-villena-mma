@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: 'Reservas', href: '#reservas' },
     { name: 'Próxima Pelea', href: '#next-fight' },
     { name: 'Highlights', href: '#highlights' },
+    { name: 'Tienda', href: '#tienda' },
     { name: 'Sobre Mí', href: '#about' },
     { name: 'Galería', href: '#gallery' },
     { name: 'Contacto', href: '#contact' },

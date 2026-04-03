@@ -2,17 +2,21 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { supabase } from '@/lib/supabase'
 
 export default function Booking() {
   const [formData, setFormData] = useState({
-    name: '',
+    nombre: '',
     email: '',
-    phone: '',
-    service: 'individual',
-    date: '',
-    time: '',
+    telefono: '',
+    edad: '',
+    arte_marcial: 'MMA',
+    fecha: '',
+    hora: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,23 +26,49 @@ export default function Booking() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Enviar por email usando mailto
-    const subject = 'Nueva Reserva de Clase - Freddy Villena'
-    const body = `
-Nombre: ${formData.name}
-Email: ${formData.email}
-Teléfono: ${formData.phone}
-Servicio: ${formData.service === 'individual' ? 'Clase Individual (€50/hora)' : 'Clase Grupal (€25/sesión)'}
-Fecha: ${formData.date}
-Hora: ${formData.time}
-    `
-    window.location.href = `mailto:management@freddyvillena.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setLoading(true)
+    setError(null)
 
-    setSubmitted(true)
-    setFormData({ name: '', email: '', phone: '', service: 'individual', date: '', time: '' })
-    setTimeout(() => setSubmitted(false), 3000)
+    try {
+      // Insertar en Supabase
+      const { data, error: supabaseError } = await supabase
+        .from('reservas')
+        .insert([
+          {
+            nombre: formData.nombre,
+            email: formData.email,
+            telefono: formData.telefono,
+            edad: parseInt(formData.edad),
+            arte_marcial: formData.arte_marcial,
+            fecha: formData.fecha,
+            hora: formData.hora,
+            estado: 'pendiente',
+          },
+        ])
+
+      if (supabaseError) {
+        throw supabaseError
+      }
+
+      setSubmitted(true)
+      setFormData({
+        nombre: '',
+        email: '',
+        telefono: '',
+        edad: '',
+        arte_marcial: 'MMA',
+        fecha: '',
+        hora: '',
+      })
+      setTimeout(() => setSubmitted(false), 4000)
+    } catch (err) {
+      setError(err.message || 'Error al guardar la reserva')
+      console.error('Error:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const getTomorrowDate = () => {
@@ -70,11 +100,11 @@ Hora: ${formData.time}
         >
           {/* Name */}
           <div>
-            <label className="block text-sm font-semibold text-ice mb-2">Nombre Completo</label>
+            <label className="block text-sm font-semibold text-ice mb-2">Nombre Completo *</label>
             <input
               type="text"
-              name="name"
-              value={formData.name}
+              name="nombre"
+              value={formData.nombre}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
@@ -84,7 +114,7 @@ Hora: ${formData.time}
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-semibold text-ice mb-2">Email</label>
+            <label className="block text-sm font-semibold text-ice mb-2">Email *</label>
             <input
               type="email"
               name="email"
@@ -98,11 +128,11 @@ Hora: ${formData.time}
 
           {/* Phone */}
           <div>
-            <label className="block text-sm font-semibold text-ice mb-2">Teléfono</label>
+            <label className="block text-sm font-semibold text-ice mb-2">Teléfono *</label>
             <input
               type="tel"
-              name="phone"
-              value={formData.phone}
+              name="telefono"
+              value={formData.telefono}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
@@ -110,27 +140,45 @@ Hora: ${formData.time}
             />
           </div>
 
-          {/* Service */}
+          {/* Age */}
           <div>
-            <label className="block text-sm font-semibold text-ice mb-2">Tipo de Clase</label>
-            <select
-              name="service"
-              value={formData.service}
+            <label className="block text-sm font-semibold text-ice mb-2">Edad *</label>
+            <input
+              type="number"
+              name="edad"
+              value={formData.edad}
               onChange={handleChange}
+              required
+              min="16"
+              max="100"
+              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
+              placeholder="25"
+            />
+          </div>
+
+          {/* Martial Art */}
+          <div>
+            <label className="block text-sm font-semibold text-ice mb-2">Arte Marcial *</label>
+            <select
+              name="arte_marcial"
+              value={formData.arte_marcial}
+              onChange={handleChange}
+              required
               className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light focus:outline-none focus:border-ice transition-colors"
             >
-              <option value="individual">Clase Individual - €50/hora</option>
-              <option value="grupal">Clase Grupal - €25/sesión (máx 4 personas)</option>
+              <option value="MMA">MMA</option>
+              <option value="Boxeo">Boxeo</option>
+              <option value="Jiu Jitsu">Jiu Jitsu</option>
             </select>
           </div>
 
           {/* Date */}
           <div>
-            <label className="block text-sm font-semibold text-ice mb-2">Fecha Deseada</label>
+            <label className="block text-sm font-semibold text-ice mb-2">Fecha Deseada *</label>
             <input
               type="date"
-              name="date"
-              value={formData.date}
+              name="fecha"
+              value={formData.fecha}
               onChange={handleChange}
               required
               min={getTomorrowDate()}
@@ -140,25 +188,37 @@ Hora: ${formData.time}
 
           {/* Time */}
           <div>
-            <label className="block text-sm font-semibold text-ice mb-2">Hora Preferida</label>
+            <label className="block text-sm font-semibold text-ice mb-2">Hora Preferida *</label>
             <input
               type="time"
-              name="time"
-              value={formData.time}
+              name="hora"
+              value={formData.hora}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light focus:outline-none focus:border-ice transition-colors"
             />
           </div>
 
+          {/* Error Message */}
+          {error && (
+            <motion.div
+              className="p-4 bg-red-900/20 border border-red-500 rounded-lg text-red-400 text-center"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              ❌ {error}
+            </motion.div>
+          )}
+
           {/* Submit Button */}
           <motion.button
             type="submit"
-            className="w-full py-4 bg-ice text-dark font-bold text-lg rounded-lg hover:bg-cyan-400 transition-colors"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            disabled={loading}
+            className="w-full py-4 bg-ice text-dark font-bold text-lg rounded-lg hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            whileHover={{ scale: loading ? 1 : 1.02 }}
+            whileTap={{ scale: loading ? 1 : 0.98 }}
           >
-            Enviar Reserva
+            {loading ? 'Guardando...' : 'Reservar Clase'}
           </motion.button>
 
           {/* Success Message */}
@@ -169,7 +229,7 @@ Hora: ${formData.time}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
             >
-              ✓ ¡Reserva enviada! Te contactaré pronto para confirmar.
+              ✓ ¡Reserva guardada exitosamente! Te contactaré pronto para confirmar.
             </motion.div>
           )}
         </motion.form>
