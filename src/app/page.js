@@ -12,9 +12,9 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-dark">
       <Navbar />
-      <main>
+      <main className="pt-20">
         <Hero />
         <Trainer />
         <Booking />
@@ -26,6 +26,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

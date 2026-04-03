@@ -18,6 +18,7 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in',
         'pulse-ice': 'pulseIce 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'slide-up': 'slideUp 0.6s ease-in-out',
       },
       keyframes: {
         fadeIn: {
@@ -27,6 +28,10 @@ module.exports = {
         pulseIce: {
           '0%, 100%': { boxShadow: '0 0 0 0 rgba(0, 212, 255, 0.7)' },
           '50%': { boxShadow: '0 0 0 10px rgba(0, 212, 255, 0)' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

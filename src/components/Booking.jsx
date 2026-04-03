@@ -77,7 +77,7 @@ export default function Booking() {
   }
 
   return (
-    <section id="reservas" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section id="reservas" className="section-container bg-black">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export default function Booking() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Name */}
+          {/* Nombre */}
           <div>
             <label className="block text-sm font-semibold text-ice mb-2">Nombre Completo *</label>
             <input
@@ -106,7 +106,6 @@ export default function Booking() {
               value={formData.nombre}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
               placeholder="Tu nombre"
             />
           </div>
@@ -120,12 +119,11 @@ export default function Booking() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
               placeholder="tu@email.com"
             />
           </div>
 
-          {/* Phone */}
+          {/* Teléfono */}
           <div>
             <label className="block text-sm font-semibold text-ice mb-2">Teléfono *</label>
             <input
@@ -134,12 +132,11 @@ export default function Booking() {
               value={formData.telefono}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
               placeholder="671478050"
             />
           </div>
 
-          {/* Age */}
+          {/* Edad */}
           <div>
             <label className="block text-sm font-semibold text-ice mb-2">Edad *</label>
             <input
@@ -150,12 +147,11 @@ export default function Booking() {
               required
               min="16"
               max="100"
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors"
               placeholder="25"
             />
           </div>
 
-          {/* Martial Art */}
+          {/* Arte Marcial */}
           <div>
             <label className="block text-sm font-semibold text-ice mb-2">Arte Marcial *</label>
             <select
@@ -163,7 +159,6 @@ export default function Booking() {
               value={formData.arte_marcial}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light focus:outline-none focus:border-ice transition-colors"
             >
               <option value="MMA">MMA</option>
               <option value="Boxeo">Boxeo</option>
@@ -171,7 +166,7 @@ export default function Booking() {
             </select>
           </div>
 
-          {/* Date */}
+          {/* Fecha */}
           <div>
             <label className="block text-sm font-semibold text-ice mb-2">Fecha Deseada *</label>
             <input
@@ -181,11 +176,10 @@ export default function Booking() {
               onChange={handleChange}
               required
               min={getTomorrowDate()}
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light focus:outline-none focus:border-ice transition-colors"
             />
           </div>
 
-          {/* Time */}
+          {/* Hora */}
           <div>
             <label className="block text-sm font-semibold text-ice mb-2">Hora Preferida *</label>
             <input
@@ -194,7 +188,6 @@ export default function Booking() {
               value={formData.hora}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-light focus:outline-none focus:border-ice transition-colors"
             />
           </div>
 

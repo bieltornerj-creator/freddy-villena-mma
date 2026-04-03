@@ -8,13 +8,13 @@ export default function About() {
     { label: 'Peso', value: '68-70 kg' },
     { label: 'Altura', value: '1.71 m' },
     { label: 'Record', value: '15-6' },
-    { label: 'Racha', value: '6 Victorias' },
+    { label: 'Racha', value: '6V' },
     { label: 'Gimnasio', value: 'BCN TEAM' },
   ]
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="section-container bg-gradient-to-b from-black to-gray-900">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,10 +34,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="aspect-square bg-gradient-to-br from-ice to-cyan-600 rounded-lg overflow-hidden">
+            <div className="aspect-square bg-gradient-to-br from-ice to-cyan-600 rounded-lg overflow-hidden shadow-2xl">
               <img
                 src="https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73799acb29acdae1a7.jpeg"
-                alt="Freddy Villena"
+                alt="Freddy Villena ICE BOY"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -69,13 +69,13 @@ export default function About() {
               día a día junto a un equipo de élite. También ofrece entrenamiento profesional a otros atletas.
             </p>
 
-            {/* Stats */}
+            {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 pt-6">
               {stats.map((stat) => (
                 <motion.div
                   key={stat.label}
-                  className="p-4 bg-gray-900 rounded-lg border border-ice/20 hover:border-ice hover:bg-gray-900/50 transition-all"
-                  whileHover={{}}
+                  className="p-4 bg-gray-900 rounded-lg border border-ice/20 hover:border-ice hover:bg-gray-900/80 transition-all"
+                  whileHover={{ scale: 1.05 }}
                 >
                   <p className="text-sm text-gray-400 mb-1">{stat.label}</p>
                   <p className="text-2xl font-bold text-ice">{stat.value}</p>

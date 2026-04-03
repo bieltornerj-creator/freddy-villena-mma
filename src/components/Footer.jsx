@@ -11,9 +11,16 @@ export default function Footer() {
     { name: 'Email', url: 'mailto:management@freddyvillena.com', icon: '📧' },
   ]
 
+  const links = [
+    { name: 'Entrenador', href: '#entrenador' },
+    { name: 'Reservas', href: '#reservas' },
+    { name: 'Tienda', href: '#tienda' },
+    { name: 'Sobre Mí', href: '#about' },
+  ]
+
   return (
     <footer className="bg-gradient-to-t from-gray-900 to-black py-12 px-4 sm:px-6 lg:px-8 border-t border-ice/20">
-      <div className="max-w-7xl mx-auto">
+      <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <motion.div
@@ -22,7 +29,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold text-ice mb-2">ICE BOY</h3>
+            <h3 className="text-2xl font-bold text-ice mb-2">❄️ ICE BOY</h3>
             <p className="text-gray-400">Freddy Villena</p>
             <p className="text-sm text-gray-500">Luchador Amateur MMA | Entrenador Profesional</p>
             <p className="text-sm text-gray-500">Record: 15-6 | Racha: 6 Victorias</p>
@@ -37,26 +44,13 @@ export default function Footer() {
           >
             <h4 className="text-ice font-bold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link href="#entrenador" className="hover-ice">
-                  Entrenamientos
-                </Link>
-              </li>
-              <li>
-                <Link href="#reservas" className="hover-ice">
-                  Reservar Clase
-                </Link>
-              </li>
-              <li>
-                <Link href="#tienda" className="hover-ice">
-                  Tienda Oficial
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="hover-ice">
-                  Sobre Freddy
-                </Link>
-              </li>
+              {links.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover-ice">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 

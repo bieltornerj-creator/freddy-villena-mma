@@ -10,7 +10,7 @@ export default function Contact() {
   const tiktok = 'https://www.tiktok.com/@Freddy.villena85'
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <section id="contact" className="section-container bg-black">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function Contact() {
               <h3 className="text-xl font-bold text-ice mb-3">📧 Email</h3>
               <a
                 href={`mailto:${email}`}
-                className="text-light hover:text-ice transition-colors break-all"
+                className="text-light hover:text-ice transition-colors break-all font-semibold"
               >
                 {email}
               </a>
@@ -46,10 +46,10 @@ export default function Contact() {
             <div className="p-6 bg-gray-900 rounded-lg border border-ice/20 hover:border-ice transition-colors">
               <h3 className="text-xl font-bold text-ice mb-3">📱 Teléfono</h3>
               <div className="space-y-2">
-                <a href={`tel:${phone1}`} className="block text-light hover:text-ice transition-colors">
+                <a href={`tel:${phone1}`} className="block text-light hover:text-ice transition-colors font-semibold">
                   {phone1}
                 </a>
-                <a href={`tel:${phone2}`} className="block text-light hover:text-ice transition-colors">
+                <a href={`tel:${phone2}`} className="block text-light hover:text-ice transition-colors font-semibold">
                   {phone2}
                 </a>
               </div>
@@ -58,7 +58,7 @@ export default function Contact() {
             {/* Location */}
             <div className="p-6 bg-gray-900 rounded-lg border border-ice/20 hover:border-ice transition-colors">
               <h3 className="text-xl font-bold text-ice mb-3">📍 Ubicación</h3>
-              <p className="text-light">Rubí / Barcelona, España</p>
+              <p className="text-light font-semibold">Rubí / Barcelona, España</p>
               <p className="text-sm text-gray-400 mt-2">BCN TEAM BARCELONA</p>
             </div>
           </motion.div>
@@ -79,7 +79,7 @@ export default function Contact() {
               className="p-6 bg-gradient-to-br from-pink-600/20 to-purple-600/20 rounded-lg border border-ice/20 hover:border-ice transition-all hover:scale-105 block"
             >
               <h3 className="text-2xl font-bold text-ice mb-2">📷 Instagram</h3>
-              <p className="text-light">@Freddy_ice_boy</p>
+              <p className="text-light font-semibold">@Freddy_ice_boy</p>
               <p className="text-sm text-gray-400 mt-2">Sígueme para contenido diario</p>
             </a>
 
@@ -91,7 +91,7 @@ export default function Contact() {
               className="p-6 bg-gradient-to-br from-black to-gray-900 rounded-lg border border-ice/20 hover:border-ice transition-all hover:scale-105 block"
             >
               <h3 className="text-2xl font-bold text-ice mb-2">🎵 TikTok</h3>
-              <p className="text-light">@Freddy.villena85</p>
+              <p className="text-light font-semibold">@Freddy.villena85</p>
               <p className="text-sm text-gray-400 mt-2">Entrenamientos y highlights</p>
             </a>
 
@@ -103,7 +103,7 @@ export default function Contact() {
               className="p-6 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-lg border border-ice/20 hover:border-ice transition-all hover:scale-105 block"
             >
               <h3 className="text-2xl font-bold text-ice mb-2">💬 WhatsApp</h3>
-              <p className="text-light">{phone1}</p>
+              <p className="text-light font-semibold">{phone1}</p>
               <p className="text-sm text-gray-400 mt-2">Envía mensaje directo</p>
             </a>
           </motion.div>

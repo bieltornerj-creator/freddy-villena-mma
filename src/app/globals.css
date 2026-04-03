@@ -16,11 +16,13 @@ body {
   background: #000;
   color: #fff;
   font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
-/* Scrollbar */
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -36,7 +38,7 @@ body {
   background: #00a8cc;
 }
 
-/* Smooth transitions */
+/* Custom Classes */
 @layer components {
   .transition-smooth {
     @apply transition-all duration-300 ease-in-out;
@@ -62,6 +64,10 @@ body {
     @apply px-8 py-4 bg-[#00d4ff] text-dark font-bold text-lg rounded-lg hover:bg-cyan-400 transition-colors;
   }
 
+  .btn-ice-sm {
+    @apply px-6 py-2 bg-[#00d4ff] text-dark font-bold rounded-lg hover:bg-cyan-400 transition-colors;
+  }
+
   .card-dark {
     @apply bg-gradient-to-b from-gray-900 to-black rounded-lg overflow-hidden border border-[#00d4ff]/20 hover:border-[#00d4ff] transition-colors;
   }
@@ -72,6 +78,10 @@ body {
 
   .section-divider {
     @apply w-20 h-1 bg-[#00d4ff] mx-auto mb-12;
+  }
+
+  .section-container {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 }
 
@@ -96,6 +106,39 @@ body {
   }
 }
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes pulseIce {
   0%,
   100% {
@@ -114,6 +157,101 @@ body {
   animation: slideUp 0.6s ease-in-out;
 }
 
+.animate-slideDown {
+  animation: slideDown 0.6s ease-in-out;
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.6s ease-in-out;
+}
+
+.animate-slideRight {
+  animation: slideRight 0.6s ease-in-out;
+}
+
 .animate-pulseIce {
   animation: pulseIce 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive Typography */
+h1 {
+  @apply text-4xl md:text-6xl font-bold;
+}
+
+h2 {
+  @apply text-3xl md:text-5xl font-bold;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl font-bold;
+}
+
+h4 {
+  @apply text-xl md:text-2xl font-bold;
+}
+
+p {
+  @apply text-base md:text-lg;
+}
+
+/* Form Styling */
+input,
+textarea,
+select {
+  @apply w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-light placeholder-gray-500 focus:outline-none focus:border-ice transition-colors;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Link Styling */
+a {
+  @apply transition-colors;
+}
+
+a:hover {
+  @apply text-ice;
+}
+
+/* Loading Animation */
+.loading {
+  @apply inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Grid Utilities */
+.grid-cols-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Backdrop Blur */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #00a8cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }

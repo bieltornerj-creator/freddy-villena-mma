@@ -15,6 +15,8 @@ export async function POST(req) {
       )
     }
 
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -28,13 +30,14 @@ export async function POST(req) {
             },
             unit_amount: 3550, // €35,50 en centavos
           },
-          quantity: quantity,
+          quantity: parseInt(quantity),
         },
       ],
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/checkout/success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/#tienda`,
+      success_url: `${baseUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/#tienda`,
       customer_email: null,
+      locale: 'es',
     })
 
     return Response.json({ sessionId: session.id })

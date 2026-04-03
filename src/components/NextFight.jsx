@@ -43,8 +43,8 @@ export default function NextFight() {
   )
 
   return (
-    <section id="proxima-pelea" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-6xl mx-auto">
+    <section id="proxima-pelea" className="section-container bg-black">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

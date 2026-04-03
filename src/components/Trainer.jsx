@@ -11,7 +11,7 @@ export default function Trainer() {
       price: '€50',
       duration: '/hora',
       description: 'Entrenamiento personalizado 1 a 1 adaptado a tus objetivos',
-      features: ['Técnica personalizada', 'Plan de entrenamiento', 'Asesoramiento profesional'],
+      features: ['Técnica personalizada', 'Plan de entrenamiento', 'Asesoramiento profesional', 'Correcciones en vivo'],
       icon: '💪',
     },
     {
@@ -20,15 +20,15 @@ export default function Trainer() {
       price: '€25',
       duration: '/sesión',
       description: 'Entrenamiento en grupo (máximo 4 personas)',
-      features: ['Ambiente motivador', 'Técnica de grupo', 'Camaradería'],
+      features: ['Ambiente motivador', 'Técnica de grupo', 'Camaradería', 'Mejor precio'],
       icon: '👥',
       maxPeople: 4,
     },
   ]
 
   return (
-    <section id="entrenador" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="entrenador" className="section-container bg-gradient-to-b from-black to-gray-900">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export default function Trainer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ scale: 1.02, borderColor: '#00d4ff' }}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="p-8">
                 <div className="text-5xl mb-4">{service.icon}</div>
