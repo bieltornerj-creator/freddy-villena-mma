@@ -35,3 +35,85 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #00a8cc;
 }
+
+/* Smooth transitions */
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .text-ice {
+    @apply text-[#00d4ff];
+  }
+
+  .bg-ice {
+    @apply bg-[#00d4ff];
+  }
+
+  .border-ice {
+    @apply border-[#00d4ff];
+  }
+
+  .hover-ice {
+    @apply hover:text-[#00d4ff] transition-colors;
+  }
+
+  .btn-ice {
+    @apply px-8 py-4 bg-[#00d4ff] text-dark font-bold text-lg rounded-lg hover:bg-cyan-400 transition-colors;
+  }
+
+  .card-dark {
+    @apply bg-gradient-to-b from-gray-900 to-black rounded-lg overflow-hidden border border-[#00d4ff]/20 hover:border-[#00d4ff] transition-colors;
+  }
+
+  .section-title {
+    @apply text-5xl md:text-6xl font-bold text-[#00d4ff] text-center mb-4;
+  }
+
+  .section-divider {
+    @apply w-20 h-1 bg-[#00d4ff] mx-auto mb-12;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseIce {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s ease-in-out;
+}
+
+.animate-pulseIce {
+  animation: pulseIce 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

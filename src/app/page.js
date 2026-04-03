@@ -3,7 +3,7 @@ import Hero from '@/components/Hero'
 import Trainer from '@/components/Trainer'
 import Booking from '@/components/Booking'
 import NextFight from '@/components/NextFight'
-import Highlights from '@/components/Highlights'
+import Fights from '@/components/Fights'
 import Shop from '@/components/Shop'
 import About from '@/components/About'
 import Gallery from '@/components/Gallery'
@@ -19,7 +19,7 @@ export default function Home() {
         <Trainer />
         <Booking />
         <NextFight />
-        <Highlights />
+        <Fights />
         <Shop />
         <About />
         <Gallery />
