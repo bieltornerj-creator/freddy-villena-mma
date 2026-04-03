@@ -16,7 +16,10 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "framer-motion": "^10.16.4",
-    "@supabase/supabase-js": "^2.38.4"
+    "@supabase/supabase-js": "^2.38.4",
+    "@stripe/react-stripe-js": "^2.4.0",
+    "@stripe/stripe-js": "^3.0.0",
+    "stripe": "^14.1.0"
   },
   "devDependencies": {
     "eslint": "^8.0.0",

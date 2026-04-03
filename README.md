@@ -35,7 +35,8 @@ Web one-page profesional para Freddy Villena, luchador amateur de MMA apodado "I
 
 - Node.js 16+
 - npm o yarn
-- Cuenta Supabase (ya configurada)
+- Cuenta Supabase (configurada)
+- Cuenta Stripe (configurada)
 
 ## 🚀 Instalación y Uso
 
@@ -74,7 +75,21 @@ npm run dev
 
 Accede a: **http://localhost:3000**
 
-### 4. Probar la reserva
+### 4. Configurar Stripe (IMPORTANTE)
+
+Las claves están en `.env.local`, pero puedes actualizarlas en:
+https://dashboard.stripe.com/apikeys
+
+Ya están configuradas con las claves live (producción).
+
+### 5. Probar la Tienda
+- Ve a "Tienda"
+- Selecciona talla y cantidad
+- Haz clic en "Comprar Ahora"
+- Se abre el checkout de Stripe
+- Completa el pago (se redirige a página de éxito)
+
+### 6. Probar las Reservas
 - Ve a "Reservas"
 - Llena el formulario (nombre, email, teléfono, **edad**, **arte marcial**, fecha, hora)
 - Haz clic en "Reservar Clase"
