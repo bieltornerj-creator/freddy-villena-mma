@@ -29,11 +29,9 @@ export default function NextFight() {
   }, [])
 
   const CountdownBox = ({ value, label }) => (
-    <div className="flex flex-col items-center">
-      <div className="w-20 h-20 md:w-24 md:h-24 bg-red-600 rounded-lg flex items-center justify-center border-2 border-red-700 mb-2">
-        <span className="text-2xl md:text-3xl font-black text-white">{String(value).padStart(2, '0')}</span>
-      </div>
-      <span className="text-xs md:text-sm font-bold text-gray-400 uppercase">{label}</span>
+    <div className="flex flex-col items-center gap-2">
+      <div className="text-4xl md:text-5xl font-black text-red-600">{String(value).padStart(2, '0')}</div>
+      <span className="text-xs md:text-sm font-bold text-gray-600 uppercase tracking-wider">{label}</span>
     </div>
   )
 
