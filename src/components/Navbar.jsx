@@ -8,12 +8,11 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navLinks = [
-    { name: 'Sobre Mí', href: '#about' },
-    { name: 'Próxima Pelea', href: '#proxima-pelea' },
-    { name: 'Entrenamientos', href: '#entrenador' },
-    { name: 'Peleas', href: '#peleas' },
-    { name: 'Tienda', href: '#tienda' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Sobre Mí', href: '/sobre-mi' },
+    { name: 'Eventos', href: '/eventos' },
+    { name: 'Entrenamientos', href: '/entrenamientos' },
+    { name: 'Tienda', href: '/tienda' },
+    { name: 'Contacto', href: '/contacto' },
   ]
 
   return (
