@@ -28,77 +28,96 @@ export default function NextFight() {
     return () => clearInterval(timer)
   }, [])
 
-  const CountdownItem = ({ value, label }) => (
-    <div className="text-center">
-      <div className="text-5xl md:text-6xl font-black text-red-600 leading-none">{String(value).padStart(2, '0')}</div>
-      <div className="text-xs text-gray-600 mt-1 uppercase font-semibold">{label}</div>
-    </div>
-  )
-
   return (
-    <section id="proxima-pelea" className="section-container bg-white">
-      <div className="container-custom">
+    <section className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1599812674872-30d1d313aae3?w=1200&h=800&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="mb-12"
         >
-          <h2 className="section-title">PRÓXIMA PELEA</h2>
-          <div className="section-divider" />
+          <h1 className="text-5xl md:text-7xl font-black mb-4">PRÓXIMA PELEA</h1>
+          <h2 className="text-3xl md:text-4xl font-bold text-red-500 mb-4">
+            Campeonato de Cataluña 2026
+          </h2>
+          <p className="text-lg md:text-xl text-gray-200">
+            Pabellón Olímpico La Mina - Barcelona
+          </p>
         </motion.div>
 
+        {/* Countdown */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="bg-black/40 backdrop-blur rounded-lg p-8 mb-8 border border-red-500/30"
+        >
+          <div className="flex justify-center items-center gap-3 md:gap-8 flex-wrap mb-6">
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
+              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Días</div>
+            </div>
+            <div className="text-5xl text-red-500 font-black">:</div>
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
+              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Horas</div>
+            </div>
+            <div className="text-5xl text-red-500 font-black">:</div>
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
+              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Minutos</div>
+            </div>
+            <div className="text-5xl text-red-500 font-black">:</div>
+            <div className="text-center">
+              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
+              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Segundos</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA */}
+        <motion.a
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          href="https://twtmma.com/events/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-8 py-4 bg-red-600 text-white font-bold text-lg rounded hover:bg-red-700 transition-colors"
+        >
+          COMPRAR ENTRADAS
+        </motion.a>
+
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-12 bg-gray-50 rounded-lg p-8 max-w-3xl mx-auto text-center border border-gray-200"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-16 grid md:grid-cols-3 gap-8"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-red-600 mb-4">
-            Campeonato de Cataluña 2026
-          </h3>
-          <p className="text-gray-700 mb-4">
-            📍 Pabellón Olímpico La Mina - Barcelona
-          </p>
-
-          <a
-            href="https://twtmma.com/events/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mb-8 px-6 py-2 bg-red-600 text-white font-bold hover:bg-red-700 transition-colors"
-          >
-            Comprar Entradas
-          </a>
-
-          <div className="flex justify-center items-center gap-4 md:gap-6 mb-12 flex-wrap">
-            <CountdownItem value={countdown.days} label="Días" />
-            <div className="text-4xl md:text-5xl text-red-600 font-black">:</div>
-            <CountdownItem value={countdown.hours} label="Horas" />
-            <div className="text-4xl md:text-5xl text-red-600 font-black">:</div>
-            <CountdownItem value={countdown.minutes} label="Minutos" />
-            <div className="text-4xl md:text-5xl text-red-600 font-black">:</div>
-            <CountdownItem value={countdown.seconds} label="Segundos" />
+          <div className="bg-black/40 backdrop-blur rounded p-6 border border-gray-600/30">
+            <p className="text-gray-400 text-sm uppercase mb-2">Racha</p>
+            <p className="text-5xl font-black text-red-500">6</p>
+            <p className="text-gray-300 text-sm">Victorias</p>
           </div>
-
-          <div className="border-t border-gray-200 pt-8">
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <p className="text-gray-700 text-sm mb-2">RACHA</p>
-                <p className="text-4xl font-black text-red-600">6</p>
-                <p className="text-gray-600 text-xs">Victorias</p>
-              </div>
-              <div>
-                <p className="text-gray-700 text-sm mb-2">RECORD</p>
-                <p className="text-4xl font-black text-red-600">15-6</p>
-                <p className="text-gray-600 text-xs">Ganadas-Perdidas</p>
-              </div>
-              <div>
-                <p className="text-gray-700 text-sm mb-2">ESTADO</p>
-                <p className="text-4xl font-black text-red-600">LISTO</p>
-                <p className="text-gray-600 text-xs">Para Pelear</p>
-              </div>
-            </div>
+          <div className="bg-black/40 backdrop-blur rounded p-6 border border-gray-600/30">
+            <p className="text-gray-400 text-sm uppercase mb-2">Record</p>
+            <p className="text-5xl font-black text-red-500">15-6</p>
+            <p className="text-gray-300 text-sm">Ganadas-Perdidas</p>
+          </div>
+          <div className="bg-black/40 backdrop-blur rounded p-6 border border-gray-600/30">
+            <p className="text-gray-400 text-sm uppercase mb-2">Estado</p>
+            <p className="text-5xl font-black text-red-500">LISTO</p>
+            <p className="text-gray-300 text-sm">Para Pelear</p>
           </div>
         </motion.div>
       </div>
