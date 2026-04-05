@@ -57,27 +57,27 @@ export default function NextFight() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-black/40 backdrop-blur rounded-lg p-8 mb-8 border border-red-500/30"
+          className="mb-12"
         >
-          <div className="flex justify-center items-center gap-3 md:gap-8 flex-wrap mb-6">
+          <div className="flex justify-center items-center gap-2 md:gap-6 flex-wrap">
             <div className="text-center">
-              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
-              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Días</div>
+              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Días</div>
             </div>
-            <div className="text-5xl text-red-500 font-black">:</div>
+            <div className="text-4xl md:text-6xl text-red-500 font-black">:</div>
             <div className="text-center">
-              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
-              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Horas</div>
+              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Horas</div>
             </div>
-            <div className="text-5xl text-red-500 font-black">:</div>
+            <div className="text-4xl md:text-6xl text-red-500 font-black">:</div>
             <div className="text-center">
-              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
-              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Minutos</div>
+              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Minutos</div>
             </div>
-            <div className="text-5xl text-red-500 font-black">:</div>
+            <div className="text-4xl md:text-6xl text-red-500 font-black">:</div>
             <div className="text-center">
-              <div className="text-6xl md:text-7xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
-              <div className="text-sm text-gray-300 mt-2 uppercase font-semibold">Segundos</div>
+              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Segundos</div>
             </div>
           </div>
         </motion.div>

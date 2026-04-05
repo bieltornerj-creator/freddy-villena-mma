@@ -40,13 +40,13 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
             <Link
-              href="#reservas"
+              href="/entrenamientos"
               className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all hover:scale-105"
             >
               Reservar Clase
             </Link>
             <Link
-              href="#tienda"
+              href="/tienda"
               className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
             >
               Ir a Tienda
