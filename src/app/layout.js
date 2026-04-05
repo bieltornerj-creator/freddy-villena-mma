@@ -13,7 +13,7 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1.0,
-  themeColor: '#00d4ff'
+  themeColor: '#e63946'
 }
 
 export default function RootLayout({ children }) {
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="ICE BOY" />
       </head>
-      <body className="bg-black text-white">{children}</body>
+      <body className="bg-black text-gray-100">{children}</body>
     </html>
   )
 }

@@ -7,8 +7,8 @@ export default function Footer() {
   const socialLinks = [
     { name: 'Instagram', url: 'https://www.instagram.com/Freddy_ice_boy', icon: '📷' },
     { name: 'TikTok', url: 'https://www.tiktok.com/@Freddy.villena85', icon: '🎵' },
-    { name: 'WhatsApp', url: 'https://wa.me/34671478050', icon: '💬' },
-    { name: 'Email', url: 'mailto:management@freddyvillena.com', icon: '📧' },
+    { name: 'WhatsApp', url: 'https://wa.me/34691313151', icon: '💬' },
+    { name: 'Email', url: 'mailto:management@freddyvillena.com', icon: '✉️' },
   ]
 
   const links = [
@@ -19,79 +19,44 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gradient-to-t from-gray-900 to-black py-12 px-4 sm:px-6 lg:px-8 border-t border-cyan-400/20">
+    <footer className="bg-black/95 py-4 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-2xl font-bold text-cyan-400 mb-2">❄️ ICE BOY</h3>
-            <p className="text-gray-400">Freddy Villena</p>
-            <p className="text-sm text-gray-500">Luchador Amateur MMA | Entrenador Profesional</p>
-            <p className="text-sm text-gray-500">Record: 15-6 | Racha: 6 Victorias</p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h4 className="text-cyan-400 font-bold mb-4">Enlaces Rápidos</h4>
-            <ul className="space-y-2 text-gray-400">
-              {links.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="hover:text-cyan-400 transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="text-cyan-400 font-bold mb-4">Sígueme</h4>
-            <div className="flex gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center text-lg hover:bg-cyan-400 hover:text-black transition-colors"
-                  title={link.name}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-cyan-400/20 my-8" />
-
-        {/* Bottom */}
         <motion.div
-          className="text-center text-gray-500 text-sm"
+          className="flex flex-col md:flex-row justify-between items-center gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5 }}
         >
-          <p>&copy; 2024 Freddy Villena - ICE BOY. Todos los derechos reservados.</p>
-          <p className="mt-2">Designed & Built for Champions</p>
+          {/* Copyright */}
+          <div className="text-xs text-gray-500">
+            &copy; 2026 Freddy Villena - ICE BOY
+          </div>
+
+          {/* Quick Links */}
+          <div className="flex gap-4 text-xs text-gray-400">
+            {links.map((link) => (
+              <Link key={link.name} href={link.href} className="hover:text-red-500 transition-colors">
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-3">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-red-500 transition-colors text-sm"
+                title={link.name}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </footer>

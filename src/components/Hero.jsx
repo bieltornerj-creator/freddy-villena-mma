@@ -18,11 +18,8 @@ export default function Hero() {
   }
 
   return (
-    <section className="pt-16 min-h-screen bg-gradient-to-b from-black via-gray-900 to-black flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-400 rounded-full mix-blend-screen filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-screen filter blur-3xl animate-pulse" />
-      </div>
+    <section className="pt-20 min-h-[600px] bg-black flex items-center justify-center relative overflow-hidden bg-cover" style={{ backgroundImage: 'url(https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfdc53fa2dde9742f7318b.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center 30%' }}>
+      <div className="absolute inset-0 bg-black/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
@@ -34,23 +31,23 @@ export default function Hero() {
           <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-black text-white">
             FREDDY VILLENA
             <br />
-            <span className="text-cyan-400">ICE BOY</span>
+            <span className="text-red-500">ICE BOY</span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto">
-            Luchador Amateur de MMA • Entrenador Profesional • Record 15-6 • Racha 6 Victorias
+          <motion.p variants={itemVariants} className="text-lg md:text-2xl text-white max-w-2xl mx-auto font-semibold">
+            Luchador Amateur de MMA • Entrenador Personal • Record 15-6 • Racha 6 Victorias
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
             <Link
               href="#reservas"
-              className="px-8 py-4 bg-cyan-400 text-black font-bold rounded-lg hover:bg-cyan-300 transition-all hover:scale-105"
+              className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all hover:scale-105"
             >
               Reservar Clase
             </Link>
             <Link
               href="#tienda"
-              className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-lg hover:bg-cyan-400/10 transition-all"
+              className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
             >
               Ir a Tienda
             </Link>
@@ -60,7 +57,7 @@ export default function Hero() {
             variants={itemVariants}
             className="pt-12 animate-bounce"
           >
-            <svg className="w-6 h-6 text-cyan-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-red-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </motion.div>

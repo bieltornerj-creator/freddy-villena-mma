@@ -40,7 +40,7 @@ export default function Trainer() {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
+        <div className="grid md:grid-cols-2 gap-4 mt-8">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -48,15 +48,15 @@ export default function Trainer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="card-dark hover:border-cyan-400 transition-all hover:scale-105"
+              className="card-dark hover:border-red-600 transition-all hover:scale-105"
             >
-              <h3 className="text-2xl font-bold text-cyan-400 mb-2">{service.title}</h3>
+              <h3 className="text-2xl font-bold text-red-600 mb-2">{service.title}</h3>
               <p className="text-3xl font-black text-white mb-6">{service.price}</p>
 
               <ul className="space-y-3 mb-8">
                 {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-300">
-                    <span className="text-cyan-400 font-bold mt-1">✓</span>
+                  <li key={i} className="flex items-start gap-3 text-gray-400">
+                    <span className="text-red-600 font-bold mt-1">✓</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -64,7 +64,7 @@ export default function Trainer() {
 
               <Link
                 href="#reservas"
-                className="block text-center py-3 bg-cyan-400 text-black font-bold rounded-lg hover:bg-cyan-300 transition-colors"
+                className="block text-center py-3 bg-red-600 text-white font-bold hover:bg-red-700 transition-colors"
               >
                 Reservar Ahora
               </Link>
@@ -77,17 +77,9 @@ export default function Trainer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-12 p-6 bg-gray-900 rounded-lg border border-cyan-400/20 text-center"
+          className="mt-8 p-6 bg-gray-900 border border-gray-800 text-center"
         >
-          <p className="text-gray-300 mb-4">
-            📍 <span className="font-bold">BCN TEAM BARCELONA</span> - Rubí / Barcelona
-          </p>
-          <a
-            href="tel:671478050"
-            className="inline-block px-6 py-2 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition-colors"
-          >
-            Llamar: 671478050
-          </a>
+          <p className="text-gray-400 font-semibold">Contacta para más información</p>
         </motion.div>
       </div>
     </section>

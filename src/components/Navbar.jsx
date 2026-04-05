@@ -19,20 +19,20 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full bg-black/95 backdrop-blur border-b border-cyan-400/20 z-50">
+    <nav className="fixed top-0 w-full bg-black/95 backdrop-blur border-b border-gray-800 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">
-            ❄️ ICE BOY
+          <Link href="/" className="text-2xl font-bold text-red-600 hover:text-red-700 transition">
+            ICE BOY
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-cyan-400 transition-colors font-medium"
+                className="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
               >
                 {link.name}
               </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-cyan-400 hover:text-cyan-300"
+            className="md:hidden text-red-600 hover:text-red-700"
           >
             <svg
               className="w-6 h-6"
@@ -62,14 +62,14 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-gray-900 border-t border-cyan-400/20"
+              className="md:hidden bg-gray-900 border-t border-gray-800"
             >
-              <div className="flex flex-col gap-4 p-4">
+              <div className="flex flex-col gap-3 p-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-white hover:text-cyan-400 transition-colors font-medium"
+                    className="text-gray-300 hover:text-red-500 transition-colors font-medium text-sm"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}

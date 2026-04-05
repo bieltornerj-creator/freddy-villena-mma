@@ -45,9 +45,9 @@ export default function Admin() {
 
   if (!authenticated) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <div className="card-dark max-w-md w-full">
-          <h1 className="text-3xl font-bold text-cyan-400 mb-6 text-center">Admin Panel</h1>
+          <h1 className="text-3xl font-bold text-red-600 mb-6 text-center">Admin Panel</h1>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-light mb-2 font-semibold">Contraseña</label>
@@ -60,7 +60,7 @@ export default function Admin() {
             </div>
             <button
               type="submit"
-              className="w-full py-2 bg-cyan-400 text-black font-bold rounded-lg hover:bg-cyan-300 transition-colors"
+              className="w-full py-2 bg-red-600 text-black font-bold rounded-lg hover:bg-red-700 transition-colors"
             >
               Iniciar Sesión
             </button>
@@ -71,42 +71,42 @@ export default function Admin() {
   }
 
   return (
-    <div className="min-h-screen bg-black p-8">
+    <div className="min-h-screen bg-gray-50 p-8">
       <div className="container-custom">
-        <h1 className="text-4xl font-bold text-cyan-400 mb-8">Admin Panel</h1>
+        <h1 className="text-4xl font-bold text-red-600 mb-8">Admin Panel</h1>
 
-        <div className="bg-gray-900 rounded-lg border border-cyan-400/20 overflow-hidden">
-          <div className="p-6 border-b border-cyan-400/20">
+        <div className="bg-gray-100 rounded-lg border border-red-600/20 overflow-hidden">
+          <div className="p-6 border-b border-red-600/20">
             <h2 className="text-2xl font-bold text-light">Reservas ({reservas.length})</h2>
           </div>
 
           {loading ? (
-            <div className="p-6 text-center text-gray-400">Cargando...</div>
+            <div className="p-6 text-center text-gray-600">Cargando...</div>
           ) : reservas.length === 0 ? (
-            <div className="p-6 text-center text-gray-400">No hay reservas aún</div>
+            <div className="p-6 text-center text-gray-600">No hay reservas aún</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-800">
+                <thead className="bg-gray-100">
                   <tr>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Nombre</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Email</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Teléfono</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Edad</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Arte Marcial</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Fecha</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Hora</th>
-                    <th className="px-6 py-3 text-left text-cyan-400 font-bold">Estado</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Nombre</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Email</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Teléfono</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Edad</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Arte Marcial</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Fecha</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Hora</th>
+                    <th className="px-6 py-3 text-left text-red-600 font-bold">Estado</th>
                   </tr>
                 </thead>
                 <tbody>
                   {reservas.map((reserva) => (
-                    <tr key={reserva.id} className="border-t border-gray-800 hover:bg-gray-800/50">
+                    <tr key={reserva.id} className="border-t border-gray-800 hover:bg-gray-100/50">
                       <td className="px-6 py-3 text-light">{reserva.nombre}</td>
                       <td className="px-6 py-3 text-light">{reserva.email}</td>
                       <td className="px-6 py-3 text-light">{reserva.telefono}</td>
                       <td className="px-6 py-3 text-light">{reserva.edad}</td>
-                      <td className="px-6 py-3 text-cyan-400 font-bold">{reserva.arte_marcial}</td>
+                      <td className="px-6 py-3 text-red-600 font-bold">{reserva.arte_marcial}</td>
                       <td className="px-6 py-3 text-light">{reserva.fecha}</td>
                       <td className="px-6 py-3 text-light">{reserva.hora}</td>
                       <td className="px-6 py-3">

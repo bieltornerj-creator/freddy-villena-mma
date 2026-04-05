@@ -4,17 +4,13 @@ import { motion } from 'framer-motion'
 
 export default function About() {
   const stats = [
-    { label: 'Edad', value: '22 años' },
-    { label: 'Peso', value: '68-70 kg' },
-    { label: 'Altura', value: '1.71 m' },
     { label: 'Record', value: '15-6' },
-    { label: 'Racha', value: '6 Victorias' },
-    { label: 'Gimnasio', value: 'BCN TEAM' },
+    { label: 'Racha', value: '6V' },
   ]
 
   return (
-    <section id="about" className="section-container bg-gray-900">
-      <div className="container-custom">
+    <section id="about" className="section-container bg-black py-8">
+      <div className="container-custom max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,19 +21,19 @@ export default function About() {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mt-12 items-center">
+        <div className="grid md:grid-cols-3 gap-6 mt-8 items-start">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-lg overflow-hidden"
+            className="md:col-span-1"
           >
             <img
-              src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=600&h=600&fit=crop"
+              src="https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73fcf3f9acd761dc08.jpeg"
               alt="Freddy Villena"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-48 object-cover"
             />
           </motion.div>
 
@@ -47,20 +43,17 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="md:col-span-2 space-y-4"
           >
             <div>
-              <h3 className="text-3xl font-bold text-cyan-400 mb-4">FREDDY VILLENA</h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Luchador amateur de MMA con pasión por el deporte. Entrenar no es solo mi profesión, es mi vida.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Desde BCN TEAM BARCELONA, me dedico a ayudar a otros a alcanzar su máximo potencial en el octágono y en la vida.
+              <h3 className="text-2xl font-bold text-red-600 mb-3">FREDDY VILLENA</h3>
+              <p className="text-gray-400 leading-relaxed text-sm">
+                Luchador amateur de MMA apasionado por el deporte. Entrenador personal dedicado a ayudar a otros a alcanzar su máximo potencial.
               </p>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 pt-6 border-t border-cyan-400/20">
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-6 pt-4">
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -68,10 +61,10 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className="p-4 bg-black rounded-lg border border-cyan-400/20"
+                  className="text-center"
                 >
-                  <p className="text-gray-400 text-sm mb-1">{stat.label}</p>
-                  <p className="text-xl font-bold text-cyan-400">{stat.value}</p>
+                  <p className="text-3xl font-black text-red-600 mb-1">{stat.value}</p>
+                  <p className="text-gray-600 text-xs uppercase">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
