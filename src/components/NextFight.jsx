@@ -28,10 +28,10 @@ export default function NextFight() {
     return () => clearInterval(timer)
   }, [])
 
-  const CountdownBox = ({ value, label }) => (
-    <div className="flex flex-col items-center gap-2">
-      <div className="text-4xl md:text-5xl font-black text-red-600">{String(value).padStart(2, '0')}</div>
-      <span className="text-xs md:text-sm font-bold text-gray-600 uppercase tracking-wider">{label}</span>
+  const CountdownItem = ({ value, label }) => (
+    <div className="text-center">
+      <div className="text-5xl md:text-6xl font-black text-red-600 leading-none">{String(value).padStart(2, '0')}</div>
+      <div className="text-xs text-gray-600 mt-1 uppercase font-semibold">{label}</div>
     </div>
   )
 
@@ -71,11 +71,14 @@ export default function NextFight() {
             Comprar Entradas
           </a>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <CountdownBox value={countdown.days} label="Días" />
-            <CountdownBox value={countdown.hours} label="Horas" />
-            <CountdownBox value={countdown.minutes} label="Minutos" />
-            <CountdownBox value={countdown.seconds} label="Segundos" />
+          <div className="flex justify-center items-center gap-4 md:gap-6 mb-12 flex-wrap">
+            <CountdownItem value={countdown.days} label="Días" />
+            <div className="text-4xl md:text-5xl text-red-600 font-black">:</div>
+            <CountdownItem value={countdown.hours} label="Horas" />
+            <div className="text-4xl md:text-5xl text-red-600 font-black">:</div>
+            <CountdownItem value={countdown.minutes} label="Minutos" />
+            <div className="text-4xl md:text-5xl text-red-600 font-black">:</div>
+            <CountdownItem value={countdown.seconds} label="Segundos" />
           </div>
 
           <div className="border-t border-gray-200 pt-8">
