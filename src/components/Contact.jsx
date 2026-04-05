@@ -8,7 +8,7 @@ export default function Contact() {
   const phoneSupport = '671478050'
 
   return (
-    <section id="contact" className="section-container bg-black">
+    <section id="contact" className="section-container bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,8 +16,8 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title">CONTACTO</h2>
-          <div className="section-divider" />
+          <h2 className="section-title text-black">CONTACTO</h2>
+          <div className="section-divider bg-red-600" />
         </motion.div>
 
         <motion.div
@@ -25,86 +25,107 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto mt-12"
+          className="max-w-5xl mx-auto mt-12"
         >
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Column 1 */}
-            <div className="space-y-8">
-              {/* Email */}
-              <div>
-                <p className="text-gray-500 text-xs font-bold uppercase mb-2">Email</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Email Card */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-red-50 to-white rounded-lg p-6 border border-red-200"
+            >
+              <p className="text-3xl mb-3">📧</p>
+              <p className="text-gray-700 text-xs font-bold uppercase mb-3">Email</p>
+              <a
+                href={`mailto:${email}`}
+                className="text-red-600 font-semibold hover:text-red-700 transition-colors break-all"
+              >
+                {email}
+              </a>
+            </motion.div>
+
+            {/* Phone Main Card */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-red-50 to-white rounded-lg p-6 border border-red-200"
+            >
+              <p className="text-3xl mb-3">📱</p>
+              <p className="text-gray-700 text-xs font-bold uppercase mb-3">Teléfono Principal</p>
+              <div className="space-y-2">
                 <a
-                  href={`mailto:${email}`}
-                  className="text-gray-300 hover:text-red-500 transition-colors"
+                  href={`tel:${phoneMain}`}
+                  className="block text-red-600 font-semibold hover:text-red-700 transition-colors"
                 >
-                  {email}
+                  +34 {phoneMain}
+                </a>
+                <a
+                  href={`https://wa.me/34${phoneMain}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold rounded hover:bg-red-700 transition-colors"
+                >
+                  WhatsApp
                 </a>
               </div>
+            </motion.div>
 
-              {/* Teléfono Principal */}
-              <div>
-                <p className="text-gray-500 text-xs font-bold uppercase mb-2">Teléfono Principal</p>
-                <div className="flex gap-3 items-center flex-wrap">
-                  <a
-                    href={`tel:${phoneMain}`}
-                    className="text-gray-300 hover:text-red-500 transition-colors"
-                  >
-                    +34 {phoneMain}
-                  </a>
-                  <a
-                    href={`https://wa.me/34${phoneMain}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
-                  >
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
+            {/* Location Card */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-red-50 to-white rounded-lg p-6 border border-red-200"
+            >
+              <p className="text-3xl mb-3">📍</p>
+              <p className="text-gray-700 text-xs font-bold uppercase mb-3">Ubicación</p>
+              <p className="text-red-600 font-semibold">Rubí, Barcelona, España</p>
+            </motion.div>
 
-            {/* Column 2 */}
-            <div className="space-y-8">
-              {/* Ubicación */}
-              <div>
-                <p className="text-gray-500 text-xs font-bold uppercase mb-2">Ubicación</p>
-                <p className="text-gray-300">Rubí, Barcelona, España</p>
-              </div>
+            {/* Support Phone Card */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-red-50 to-white rounded-lg p-6 border border-red-200"
+            >
+              <p className="text-3xl mb-3">☎️</p>
+              <p className="text-gray-700 text-xs font-bold uppercase mb-3">Soporte</p>
+              <a
+                href={`tel:${phoneSupport}`}
+                className="text-red-600 font-semibold hover:text-red-700 transition-colors"
+              >
+                +34 {phoneSupport}
+              </a>
+            </motion.div>
 
-              {/* Teléfono de Apoyo */}
-              <div>
-                <p className="text-gray-500 text-xs font-bold uppercase mb-2">Teléfono de Apoyo</p>
-                <a
-                  href={`tel:${phoneSupport}`}
-                  className="text-gray-300 hover:text-red-500 transition-colors"
-                >
-                  +34 {phoneSupport}
-                </a>
-              </div>
+            {/* Instagram Card */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-red-50 to-white rounded-lg p-6 border border-red-200"
+            >
+              <p className="text-3xl mb-3">📸</p>
+              <p className="text-gray-700 text-xs font-bold uppercase mb-3">Instagram</p>
+              <a
+                href="https://www.instagram.com/Freddy_ice_boy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-600 font-semibold hover:text-red-700 transition-colors"
+              >
+                @Freddy_ice_boy
+              </a>
+            </motion.div>
 
-              {/* Social Media */}
-              <div>
-                <p className="text-gray-500 text-xs font-bold uppercase mb-2">Síguenos</p>
-                <div className="flex gap-4">
-                  <a
-                    href="https://www.instagram.com/Freddy_ice_boy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-red-500 transition-colors"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@Freddy.villena85"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-red-500 transition-colors"
-                  >
-                    TikTok
-                  </a>
-                </div>
-              </div>
-            </div>
+            {/* TikTok Card */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-red-50 to-white rounded-lg p-6 border border-red-200"
+            >
+              <p className="text-3xl mb-3">🎵</p>
+              <p className="text-gray-700 text-xs font-bold uppercase mb-3">TikTok</p>
+              <a
+                href="https://www.tiktok.com/@Freddy.villena85"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-600 font-semibold hover:text-red-700 transition-colors"
+              >
+                @Freddy.villena85
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       </div>

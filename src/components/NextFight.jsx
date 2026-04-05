@@ -29,22 +29,16 @@ export default function NextFight() {
   }, [])
 
   const CountdownBox = ({ value, label }) => (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center"
-    >
-      <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded flex items-center justify-center border-2 border-red-600/50 mb-2">
-        <span className="text-3xl md:text-5xl font-black text-red-600">{String(value).padStart(2, '0')}</span>
+    <div className="flex flex-col items-center">
+      <div className="w-20 h-20 md:w-24 md:h-24 bg-red-600 rounded-lg flex items-center justify-center border-2 border-red-700 mb-2">
+        <span className="text-2xl md:text-3xl font-black text-white">{String(value).padStart(2, '0')}</span>
       </div>
-      <span className="text-sm md:text-base font-bold text-gray-500 uppercase">{label}</span>
-    </motion.div>
+      <span className="text-xs md:text-sm font-bold text-gray-400 uppercase">{label}</span>
+    </div>
   )
 
   return (
-    <section id="proxima-pelea" className="section-container bg-black">
+    <section id="proxima-pelea" className="section-container bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,12 +55,12 @@ export default function NextFight() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-12 card-dark max-w-3xl mx-auto text-center"
+          className="mt-12 bg-gray-50 rounded-lg p-8 max-w-3xl mx-auto text-center border border-gray-200"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-red-600 mb-4">
             Campeonato de Cataluña 2026
           </h3>
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-700 mb-4">
             📍 Pabellón Olímpico La Mina - Barcelona
           </p>
 
@@ -86,22 +80,22 @@ export default function NextFight() {
             <CountdownBox value={countdown.seconds} label="Segundos" />
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
+          <div className="border-t border-gray-200 pt-8">
             <div className="grid md:grid-cols-3 gap-6">
               <div>
-                <p className="text-gray-600 text-sm mb-2">RACHA</p>
+                <p className="text-gray-700 text-sm mb-2">RACHA</p>
                 <p className="text-4xl font-black text-red-600">6</p>
-                <p className="text-gray-700 text-xs">Victorias</p>
+                <p className="text-gray-600 text-xs">Victorias</p>
               </div>
               <div>
-                <p className="text-gray-600 text-sm mb-2">RECORD</p>
+                <p className="text-gray-700 text-sm mb-2">RECORD</p>
                 <p className="text-4xl font-black text-red-600">15-6</p>
-                <p className="text-gray-700 text-xs">Ganadas-Perdidas</p>
+                <p className="text-gray-600 text-xs">Ganadas-Perdidas</p>
               </div>
               <div>
-                <p className="text-gray-600 text-sm mb-2">ESTADO</p>
+                <p className="text-gray-700 text-sm mb-2">ESTADO</p>
                 <p className="text-4xl font-black text-red-600">LISTO</p>
-                <p className="text-gray-700 text-xs">Para Pelear</p>
+                <p className="text-gray-600 text-xs">Para Pelear</p>
               </div>
             </div>
           </div>
