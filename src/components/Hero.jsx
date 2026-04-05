@@ -18,8 +18,8 @@ export default function Hero() {
   }
 
   return (
-    <section className="pt-20 min-h-[600px] bg-black flex items-center justify-center relative overflow-hidden bg-cover" style={{ backgroundImage: 'url(https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfdc53fa2dde9742f7318b.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center 30%' }}>
-      <div className="absolute inset-0 bg-black/70" />
+    <section className="pt-20 min-h-[600px] bg-white flex items-center justify-center relative overflow-hidden" style={{ backgroundImage: 'url(https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfdc53fa2dde9742f7318b.jpeg)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

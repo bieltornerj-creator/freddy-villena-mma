@@ -9,7 +9,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="section-container bg-black py-8">
+    <section id="about" className="section-container bg-white py-8">
       <div className="container-custom max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export default function About() {
             <img
               src="https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73fcf3f9acd761dc08.jpeg"
               alt="Freddy Villena"
-              className="w-full h-48 object-cover"
+              className="w-full h-96 object-contain"
             />
           </motion.div>
 
@@ -47,7 +47,7 @@ export default function About() {
           >
             <div>
               <h3 className="text-2xl font-bold text-red-600 mb-3">FREDDY VILLENA</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <p className="text-gray-700 leading-relaxed text-sm">
                 Luchador amateur de MMA apasionado por el deporte. Entrenador personal dedicado a ayudar a otros a alcanzar su máximo potencial.
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function About() {
                   className="text-center"
                 >
                   <p className="text-3xl font-black text-red-600 mb-1">{stat.value}</p>
-                  <p className="text-gray-600 text-xs uppercase">{stat.label}</p>
+                  <p className="text-gray-700 text-xs uppercase">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
