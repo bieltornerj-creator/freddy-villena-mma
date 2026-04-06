@@ -32,7 +32,7 @@ export default function Contact() {
           <div className="pb-8 border-b border-gray-200">
             <p className="text-sm font-bold text-gray-600 uppercase mb-3">Email</p>
             <a
-              href={`mailto:${email}`}
+              href={`mailto:${email}?subject=Contacto desde web&body=Hola Freddy, me gustaría ponerme en contacto contigo.`}
               className="text-2xl text-gray-900 hover:text-red-600 transition-colors font-semibold"
             >
               {email}
@@ -49,8 +49,21 @@ export default function Contact() {
               >
                 +34 {phoneMain}
               </a>
+            </div>
+          </div>
+
+          {/* Support */}
+          <div className="pb-8 border-b border-gray-200">
+            <p className="text-sm font-bold text-gray-600 uppercase mb-3">Soporte</p>
+            <div className="space-y-4">
               <a
-                href={`https://wa.me/34${phoneMain}`}
+                href={`tel:${phoneSupport}`}
+                className="block text-2xl text-gray-900 hover:text-red-600 transition-colors font-semibold"
+              >
+                +34 {phoneSupport}
+              </a>
+              <a
+                href={`https://wa.me/34${phoneSupport}?text=Hola Freddy, me gustaría ponerme en contacto contigo.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-4 py-2 bg-red-600 text-white text-sm font-bold rounded hover:bg-red-700 transition-colors"
@@ -58,17 +71,6 @@ export default function Contact() {
                 Enviar WhatsApp
               </a>
             </div>
-          </div>
-
-          {/* Support */}
-          <div className="pb-8 border-b border-gray-200">
-            <p className="text-sm font-bold text-gray-600 uppercase mb-3">Soporte</p>
-            <a
-              href={`tel:${phoneSupport}`}
-              className="text-2xl text-gray-900 hover:text-red-600 transition-colors font-semibold"
-            >
-              +34 {phoneSupport}
-            </a>
           </div>
 
           {/* Location */}
