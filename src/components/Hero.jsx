@@ -22,9 +22,8 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1015 50%, #1a1a1a 100%)' }}>
-      <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 80% 50%, rgba(230, 57, 70, 0.2) 0%, transparent 50%)' }} />
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-70" />
+    <section className="min-h-screen bg-white flex items-end justify-center relative overflow-hidden pt-20" style={{ backgroundImage: 'url(https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfdc53fa2dde9742f7318b.jpeg)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-white" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20">
         <motion.div
@@ -58,7 +57,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/tienda"
-              className="px-8 py-4 border-2 border-red-500 text-red-500 font-bold rounded-lg hover:bg-red-500/10 transition-all"
+              className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
             >
               Ir a Tienda
             </Link>
