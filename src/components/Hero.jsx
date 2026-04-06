@@ -22,8 +22,9 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=1200&h=800&fit=crop)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right', backgroundAttachment: 'fixed' }}>
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1015 50%, #1a1a1a 100%)' }}>
+      <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 80% 50%, rgba(230, 57, 70, 0.2) 0%, transparent 50%)' }} />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20">
         <motion.div
