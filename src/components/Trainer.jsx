@@ -19,7 +19,7 @@ export default function Trainer() {
       title: 'Entrenamiento Grupal',
       price: '€25/sesión',
       features: [
-        'Grupos pequeños (4-8 personas)',
+        'Máximo 4 personas',
         'Ambiente dinámico',
         'MMA, Boxeo, Jiu Jitsu',
         'Comunidad motivadora',
