@@ -29,25 +29,25 @@ export default function NextFight() {
   }, [])
 
   return (
-    <section className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1599812674872-30d1d313aae3?w=1200&h=800&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <section className="bg-white py-12 relative overflow-hidden" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1599812674872-30d1d313aae3?w=1200&h=800&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12"
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          <h1 className="text-5xl md:text-7xl font-black mb-4">PRÓXIMA PELEA</h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-red-500 mb-4">
+          <h1 className="text-3xl md:text-4xl font-black mb-2">PRÓXIMA PELEA</h1>
+          <h2 className="text-xl md:text-2xl font-bold text-red-500 mb-2">
             Campeonato de Cataluña 2026
           </h2>
-          <p className="text-lg md:text-xl text-gray-200">
-            Pabellón Olímpico La Mina - Barcelona
+          <p className="text-sm md:text-base text-gray-300">
+            📍 Pabellón Olímpico La Mina - Barcelona
           </p>
         </motion.div>
 
@@ -56,28 +56,28 @@ export default function NextFight() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12"
+          transition={{ duration: 0.6 }}
+          className="mb-6 bg-black/30 backdrop-blur rounded-lg p-6 border border-red-600/30"
         >
-          <div className="flex justify-center items-center gap-2 md:gap-6 flex-wrap">
-            <div className="text-center">
-              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Días</div>
+          <div className="flex justify-center items-center gap-3 md:gap-4 flex-wrap">
+            <div className="text-center min-w-fit">
+              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">D</div>
             </div>
-            <div className="text-4xl md:text-6xl text-red-500 font-black">:</div>
-            <div className="text-center">
-              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Horas</div>
+            <div className="text-2xl text-red-500 font-black">:</div>
+            <div className="text-center min-w-fit">
+              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">H</div>
             </div>
-            <div className="text-4xl md:text-6xl text-red-500 font-black">:</div>
-            <div className="text-center">
-              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Minutos</div>
+            <div className="text-2xl text-red-500 font-black">:</div>
+            <div className="text-center min-w-fit">
+              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">M</div>
             </div>
-            <div className="text-4xl md:text-6xl text-red-500 font-black">:</div>
-            <div className="text-center">
-              <div className="text-6xl md:text-8xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">Segundos</div>
+            <div className="text-2xl text-red-500 font-black">:</div>
+            <div className="text-center min-w-fit">
+              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">S</div>
             </div>
           </div>
         </motion.div>
@@ -87,11 +87,11 @@ export default function NextFight() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           href="https://twtmma.com/events/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-4 bg-red-600 text-white font-bold text-lg rounded hover:bg-red-700 transition-colors"
+          className="inline-block px-6 py-3 bg-red-600 text-white font-bold rounded hover:bg-red-700 transition-colors"
         >
           COMPRAR ENTRADAS
         </motion.a>
@@ -101,23 +101,23 @@ export default function NextFight() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 grid md:grid-cols-3 gap-8"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-8 grid grid-cols-3 gap-3 md:gap-4"
         >
-          <div className="bg-black/40 backdrop-blur rounded p-6 border border-gray-600/30">
-            <p className="text-gray-400 text-sm uppercase mb-2">Racha</p>
-            <p className="text-5xl font-black text-red-500">6</p>
-            <p className="text-gray-300 text-sm">Victorias</p>
+          <div className="bg-black/40 backdrop-blur rounded p-3 md:p-4 border border-gray-600/30">
+            <p className="text-gray-400 text-xs uppercase mb-1">Racha</p>
+            <p className="text-2xl md:text-3xl font-black text-red-500">6</p>
+            <p className="text-gray-300 text-xs">Victorias</p>
           </div>
-          <div className="bg-black/40 backdrop-blur rounded p-6 border border-gray-600/30">
-            <p className="text-gray-400 text-sm uppercase mb-2">Record</p>
-            <p className="text-5xl font-black text-red-500">15-6</p>
-            <p className="text-gray-300 text-sm">Ganadas-Perdidas</p>
+          <div className="bg-black/40 backdrop-blur rounded p-3 md:p-4 border border-gray-600/30">
+            <p className="text-gray-400 text-xs uppercase mb-1">Record</p>
+            <p className="text-2xl md:text-3xl font-black text-red-500">15-6</p>
+            <p className="text-gray-300 text-xs">G-P</p>
           </div>
-          <div className="bg-black/40 backdrop-blur rounded p-6 border border-gray-600/30">
-            <p className="text-gray-400 text-sm uppercase mb-2">Estado</p>
-            <p className="text-5xl font-black text-red-500">LISTO</p>
-            <p className="text-gray-300 text-sm">Para Pelear</p>
+          <div className="bg-black/40 backdrop-blur rounded p-3 md:p-4 border border-gray-600/30">
+            <p className="text-gray-400 text-xs uppercase mb-1">Estado</p>
+            <p className="text-2xl md:text-3xl font-black text-red-500">LISTO</p>
+            <p className="text-gray-300 text-xs">Pelear</p>
           </div>
         </motion.div>
       </div>

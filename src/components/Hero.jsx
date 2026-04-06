@@ -17,9 +17,13 @@ export default function Hero() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   }
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
-    <section className="min-h-screen bg-white flex items-end justify-center relative overflow-hidden pt-20" style={{ backgroundImage: 'url(https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfdc53fa2dde9742f7318b.jpeg)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center' }}>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-white" />
+    <section className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=1200&h=800&fit=crop)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right', backgroundAttachment: 'fixed' }}>
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-20">
         <motion.div
@@ -39,6 +43,12 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+            <button
+              onClick={handleScrollToTop}
+              className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all hover:scale-105"
+            >
+              Inicio
+            </button>
             <Link
               href="/entrenamientos"
               className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all hover:scale-105"
@@ -47,7 +57,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/tienda"
-              className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all"
+              className="px-8 py-4 border-2 border-red-500 text-red-500 font-bold rounded-lg hover:bg-red-500/10 transition-all"
             >
               Ir a Tienda
             </Link>
