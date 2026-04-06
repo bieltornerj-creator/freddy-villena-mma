@@ -57,27 +57,27 @@ export default function NextFight() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-6 bg-black/30 backdrop-blur rounded-lg p-6 border border-red-600/30"
+          className="mb-6"
         >
-          <div className="flex justify-center items-center gap-3 md:gap-4 flex-wrap">
-            <div className="text-center min-w-fit">
-              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">D</div>
+          <div className="flex justify-center items-center gap-2 flex-wrap">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-black text-red-500 leading-none">{String(countdown.days).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-0.5 uppercase font-semibold">Días</div>
             </div>
-            <div className="text-2xl text-red-500 font-black">:</div>
-            <div className="text-center min-w-fit">
-              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">H</div>
+            <div className="text-xl text-red-500 font-black">:</div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-black text-red-500 leading-none">{String(countdown.hours).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-0.5 uppercase font-semibold">Horas</div>
             </div>
-            <div className="text-2xl text-red-500 font-black">:</div>
-            <div className="text-center min-w-fit">
-              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">M</div>
+            <div className="text-xl text-red-500 font-black">:</div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-black text-red-500 leading-none">{String(countdown.minutes).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-0.5 uppercase font-semibold">Min</div>
             </div>
-            <div className="text-2xl text-red-500 font-black">:</div>
-            <div className="text-center min-w-fit">
-              <div className="text-3xl md:text-4xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
-              <div className="text-xs text-gray-300 mt-1 uppercase font-semibold">S</div>
+            <div className="text-xl text-red-500 font-black">:</div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-black text-red-500 leading-none">{String(countdown.seconds).padStart(2, '0')}</div>
+              <div className="text-xs text-gray-300 mt-0.5 uppercase font-semibold">Seg</div>
             </div>
           </div>
         </motion.div>
