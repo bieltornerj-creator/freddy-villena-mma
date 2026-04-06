@@ -31,7 +31,7 @@ export default function NextFight() {
   return (
     <section className="bg-white py-12 relative overflow-hidden" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1599812674872-30d1d313aae3?w=1200&h=800&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/35" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -42,7 +42,7 @@ export default function NextFight() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <h1 className="text-3xl md:text-4xl font-black mb-2">PRÓXIMA PELEA</h1>
+          <h1 className="text-3xl md:text-4xl font-black mb-2 text-white drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>PRÓXIMA PELEA</h1>
           <h2 className="text-xl md:text-2xl font-bold text-red-500 mb-2">
             Campeonato de Cataluña 2026
           </h2>
