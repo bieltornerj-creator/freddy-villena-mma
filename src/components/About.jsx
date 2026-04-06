@@ -21,29 +21,12 @@ export default function About() {
           <div className="section-divider" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-8 items-start">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="md:col-span-1"
-          >
-            <img
-              src="https://assets.cdn.filesafe.space/MyFJ6lhweMtzOUvBPwI3/media/69cfaa73fcf3f9acd761dc08.jpeg"
-              alt="Freddy Villena"
-              className="w-full h-96 object-contain"
-            />
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:col-span-2 space-y-4"
+            className="max-w-2xl mx-auto space-y-4"
           >
             <div>
               <h3 className="text-2xl font-bold text-red-600 mb-3">FREDDY VILLENA</h3>
