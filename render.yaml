@@ -12,3 +12,5 @@ services:
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: CLICKUP_API_TOKEN
+        sync: false
