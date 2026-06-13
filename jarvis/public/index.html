@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>Jarvis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" data-state="idle">
+      <!-- Orbe central animado -->
+      <div class="orb-wrap" aria-hidden="true">
+        <div class="orb">
+          <span class="orb-glow"></span>
+          <span class="orb-core"></span>
+          <span class="orb-waves"></span>
+        </div>
+      </div>
+
+      <!-- Estado actual -->
+      <p id="status" class="status" role="status" aria-live="polite">
+        Iniciando…
+      </p>
+
+      <!-- Zona de transcripción del usuario y respuesta de Jarvis -->
+      <section class="dialog">
+        <p id="transcript" class="transcript" aria-live="polite"></p>
+        <p id="reply" class="reply" aria-live="polite"></p>
+      </section>
+
+      <!-- Errores -->
+      <p id="error" class="error" role="alert"></p>
+
+      <!-- Control de sensibilidad de la palmada -->
+      <div class="controls">
+        <label for="sensitivity" class="controls-label">
+          Sensibilidad de palmada
+          <span id="sensitivity-value" class="controls-value">0.40</span>
+        </label>
+        <input
+          id="sensitivity"
+          type="range"
+          min="0.10"
+          max="0.90"
+          step="0.01"
+          value="0.40"
+        />
+        <p class="controls-hint">
+          Más a la izquierda = detecta palmadas más suaves.
+        </p>
+      </div>
+
+      <!-- Botón de arranque (necesario para permisos en móvil) -->
+      <button id="start" class="start-btn">Activar micrófono</button>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

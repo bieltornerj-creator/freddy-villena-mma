@@ -1,0 +1,16 @@
+{
+  "name": "jarvis-voice-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Asistente de voz tipo Jarvis. Frontend vanilla servido con Express, que hace de proxy a la API de Anthropic.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  }
+}

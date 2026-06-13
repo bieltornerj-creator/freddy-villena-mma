@@ -1,0 +1,281 @@
+/* ============================================================
+   Jarvis — diseño oscuro, minimalista
+   Estados del orbe: idle (pasivo), listening, processing, speaking
+   ============================================================ */
+
+:root {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.55);
+
+  --idle: #1e3a5f; /* azul tenue */
+  --listening: #8b5cf6; /* púrpura */
+  --processing: #f59e0b; /* naranja */
+  --speaking: #10b981; /* verde */
+
+  /* Color activo del orbe, cambia según el estado */
+  --orb: var(--idle);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+/* -------------------- Orbe -------------------- */
+
+.orb-wrap {
+  display: grid;
+  place-items: center;
+}
+
+.orb {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+}
+
+.orb-core,
+.orb-glow,
+.orb-waves {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Núcleo: gradiente radial que rota */
+.orb-core {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle at 35% 30%,
+    color-mix(in srgb, var(--orb) 90%, white 30%),
+    var(--orb) 45%,
+    color-mix(in srgb, var(--orb) 60%, black 40%) 100%
+  );
+  box-shadow: 0 0 60px 10px color-mix(in srgb, var(--orb) 65%, transparent);
+  animation: rotate 12s linear infinite, pulse 3.4s ease-in-out infinite;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Halo exterior (glow) */
+.orb-glow {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--orb) 40%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(6px);
+  animation: pulse 3.4s ease-in-out infinite;
+  transition: background 0.5s ease;
+}
+
+/* Ondas (visibles al hablar) */
+.orb-waves {
+  width: 150px;
+  height: 150px;
+  border: 2px solid color-mix(in srgb, var(--orb) 70%, transparent);
+  opacity: 0;
+}
+
+/* -------------------- Estados -------------------- */
+
+/* Pasivo: pulso lento */
+.app[data-state='idle'] {
+  --orb: var(--idle);
+}
+.app[data-state='idle'] .orb-core {
+  animation: rotate 16s linear infinite, pulse 4.2s ease-in-out infinite;
+}
+
+/* Escuchando: púrpura, pulso rápido */
+.app[data-state='listening'] {
+  --orb: var(--listening);
+}
+.app[data-state='listening'] .orb-core {
+  animation: rotate 10s linear infinite, pulse 1.1s ease-in-out infinite;
+}
+
+/* Procesando: naranja, rotación marcada */
+.app[data-state='processing'] {
+  --orb: var(--processing);
+}
+.app[data-state='processing'] .orb-core {
+  animation: rotate 2.2s linear infinite, pulse 2s ease-in-out infinite;
+}
+
+/* Hablando: verde, ondas */
+.app[data-state='speaking'] {
+  --orb: var(--speaking);
+}
+.app[data-state='speaking'] .orb-core {
+  animation: rotate 8s linear infinite, pulse 0.9s ease-in-out infinite;
+}
+.app[data-state='speaking'] .orb-waves {
+  animation: waves 1.4s ease-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb-core,
+  .orb-glow,
+  .orb-waves {
+    animation: none !important;
+  }
+}
+
+/* -------------------- Texto -------------------- */
+
+.status {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  min-height: 1.4em;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 520px;
+  min-height: 4.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transcript {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  font-style: italic;
+  min-height: 1.4em;
+}
+
+.reply {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.error {
+  margin: 0;
+  color: #f87171;
+  font-size: 0.95rem;
+  min-height: 1.2em;
+  max-width: 520px;
+}
+
+/* -------------------- Controles -------------------- */
+
+.controls {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controls-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.controls-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--listening);
+}
+
+.controls-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* -------------------- Botón de arranque -------------------- */
+
+.start-btn {
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.start-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.start-btn:active {
+  transform: scale(0.97);
+}
+
+/* Oculta el botón cuando ya está activo */
+.app[data-running='true'] .start-btn {
+  display: none;
+}
