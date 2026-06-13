@@ -1,0 +1,14 @@
+# Blueprint de Render para desplegar Jarvis.
+# En Render: New + → Blueprint → conecta este repo. Detecta este archivo solo.
+# Te pedirá ANTHROPIC_API_KEY (no se guarda en el repo).
+services:
+  - type: web
+    name: jarvis
+    runtime: node
+    rootDir: jarvis
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
